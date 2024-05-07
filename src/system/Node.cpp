@@ -305,6 +305,7 @@ void Node::logTaskTime(const Job* job, const Task* task, double duration) const 
 nlohmann::json Node::toJson() {
 	nlohmann::json json;
 	json["id"] = id;
+	json["name"] = getHostName();
 	json["type"] = type;
 	json["state"] = state;
 	json["assigned_jobs"] = nlohmann::json::array();
